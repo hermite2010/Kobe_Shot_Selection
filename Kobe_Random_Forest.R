@@ -45,7 +45,7 @@ Kobe_test <- subset(Kobe_data_OG, is.na(shot_made_flag)) %>%
 # Recipe to use for all models
 Kobe_recipe <- recipe(shot_made_flag ~ ., data = Kobe_train) %>%
   update_role(shot_id, new_role = "ID") %>% 
-  step_dummy(all_nominal_predictors(), outcome = vars(shot_made_flag))
+  step_dummy(all_nominal_predictors())
 
 # Classification Forest ---------------------------------------------------
 # Set Up the Engine
